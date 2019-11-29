@@ -1,0 +1,55 @@
+# Made this with the Swagger Inspector. I was hoping it would inspect the response bodies and use that, no luck.
+openapi: 3.0.1
+info:
+  title: defaultTitle
+  description: defaultDescription
+  version: '0.1'
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  /login:
+    get:
+      description: Login
+      responses:
+        '200':
+          description: Login successful
+          content:
+            text/html; charset=utf-8:
+              schema:
+                type: string
+              examples: {}
+      servers:
+        - url: 'http://localhost:3000'
+    servers:
+      - url: 'http://localhost:3000'
+  /:
+    get:
+      description: Greeting
+      responses:
+        '200':
+          description: Successful greeting
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: string
+              examples: {}
+        '401':
+          description: Permission failure
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: string
+              examples: {}
+      servers:
+        - url: 'http://localhost:3000'
+    servers:
+      - url: 'http://localhost:3000'
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: 'http://yourauthurl.com'
+          scopes:
+            scope_name: Enter your scopes here
