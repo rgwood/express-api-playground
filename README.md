@@ -44,4 +44,4 @@ Longest transaction:            0.14
 Shortest transaction:           0.02
 ```
 
-This is on an 8-core MBP, but the speedup is only ~3x?
+This is on an quad-core MBP and my CPU goes to nearly 400%, but the speedup is only ~3x. Wonder where the overhead is.
